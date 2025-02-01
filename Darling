@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine ❤️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f9d7e6;
+            color: #ff4d6d;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 50px;
+        }
+        button {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ff708d;
+        }
+        .hidden {
+            display: none;
+        }
+        .heart {
+            font-size: 5em;
+            color: #ff4d6d;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="step1">
+        <h1>Darling ❤️</h1>
+        <p>Click below to see what I have for you...</p>
+        <button onclick="showStep2()">Let's Go!</button>
+    </div>
+
+    <div id="step2" class="hidden">
+        <h1>You are amazing...</h1>
+        <p>I wanted to do something special for you today.</p>
+        <button onclick="showStep3()">Next</button>
+    </div>
+
+    <div id="step3" class="hidden">
+        <h1>Will you be my Valentine?</h1>
+        <div class="heart">❤️</div>
+        <button onclick="sayYes()">Yes ❤️</button>
+        <button onclick="sayNo()">No 😢</button>
+    </div>
+
+    <div id="step4" class="hidden">
+        <h1>Yay! I'm so happy! ❤️</h1>
+        <p>You've made me the happiest person ever!</p>
+    </div>
+
+    <div id="step5" class="hidden">
+        <h1>Aww... 😔</h1>
+        <p>No worries, I still love you!</p>
+    </div>
+
+    <script>
+        function showStep2() {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }
+
+        function showStep3() {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.remove('hidden');
+        }
+
+        function sayYes() {
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step4').classList.remove('hidden');
+        }
+
+        function sayNo() {
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step5').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
